@@ -13,7 +13,7 @@ driver.get("https://ozh.github.io/cookieclicker/")
 # Wait for page to load just in case
 sleep(3)
 
-# Handle initial popups (cookies consent does not have to be clicked, but language does)
+# Handle initial popups 
 print("Looking for language selection...")
 try:
     # Select English language
@@ -23,14 +23,13 @@ try:
     sleep(3)  # more loading
 except NoSuchElementException:
     print("Language selection not found")
-
-# Wait for everything to settle
+#Wait
 sleep(2)
 
 # Find the big cookie to click
 cookie = driver.find_element(by=By.ID, value="bigCookie")
 
-# Get all store items (products 0-17)
+# Get all store items 
 item_ids = [f"product{i}" for i in range(18)]
 
 # Set timers
@@ -80,3 +79,4 @@ while True:
         except NoSuchElementException:
             print("Couldn't get final cookie count")
         break
+
